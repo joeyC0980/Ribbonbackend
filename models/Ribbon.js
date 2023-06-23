@@ -1,7 +1,14 @@
 import mongoose from "mongoose";
 const RibbonSchema = new mongoose.Schema(
   {
+    photos: {
+      type: [String],
+    },
     title: {
+      type: String,
+      required: true,
+    },
+    color: {
       type: String,
       required: true,
     },
@@ -12,6 +19,10 @@ const RibbonSchema = new mongoose.Schema(
     desc: {
       type: String,
       required: true,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }

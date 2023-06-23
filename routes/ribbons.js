@@ -10,19 +10,20 @@ import {
 import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
-//CREATE
-router.post("/:ribbonid", verifyAdmin, createRibbon);
 
-//UPDATE
-router.put("/availability/:id", updateRibbonAvailability);
+// CREATE
+router.post("/", verifyAdmin, createRibbon);
+
+// UPDATE
 router.put("/:id", verifyAdmin, updateRibbon);
-//DELETE
-router.delete("/:id/:ribbonid", verifyAdmin, deleteRibbon);
-//GET
 
-router.get("/:id", getRibbon);
-//GET ALL
+// DELETE
+router.delete("/:id", verifyAdmin, deleteRibbon);
 
+// GET
+router.get("/find/:id", getRibbon);
+
+// GET ALL
 router.get("/", getRibbons);
 
 export default router;

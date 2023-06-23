@@ -79,7 +79,7 @@ app.post("/api/payment", cors(), async (req, res) => {
 	}
 })
 
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     connect()
     console.log("connect to the backend!")
 })
